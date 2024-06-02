@@ -185,7 +185,7 @@ class MainActivity : AppCompatActivity() {
 
         // When the animation is done, remove the created view from the container
         set.addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationEnd(animation: Animator?) {
+            override fun onAnimationEnd(animation: Animator) {
                 container.removeView(newStar)
             }
         })
@@ -200,11 +200,11 @@ class MainActivity : AppCompatActivity() {
         // the given view for the entirety of that animation.
 
         addListener(object : AnimatorListenerAdapter() {
-            override fun onAnimationStart(animation: Animator?) {
+            override fun onAnimationStart(animation: Animator) {
                 view.isEnabled = false
             }
 
-            override fun onAnimationEnd(animation: Animator?) {
+            override fun onAnimationEnd(animation: Animator) {
                 view.isEnabled = true
             }
         })
